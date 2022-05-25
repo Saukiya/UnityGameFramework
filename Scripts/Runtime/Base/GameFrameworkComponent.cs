@@ -28,6 +28,7 @@ namespace UnityGameFramework.Runtime
         private static T inst;
 
         protected override void Awake() {
+            base.Awake();
             inst = GetComponent<T>();
         }
         
