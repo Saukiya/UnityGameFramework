@@ -17,7 +17,7 @@ namespace UnityGameFramework.Runtime
     /// </summary>
     [DisallowMultipleComponent]
     [AddComponentMenu("Game Framework/File System")]
-    public sealed class FileSystemComponent : GameFrameworkComponent
+    public sealed class FileSystemComponent : SingleGameFrameworkComponent<FileSystemComponent>
     {
         private IFileSystemManager m_FileSystemManager = null;
 

@@ -22,4 +22,20 @@ namespace UnityGameFramework.Runtime
             GameEntry.RegisterComponent(this);
         }
     }
+
+    public abstract class SingleGameFrameworkComponent<T> : GameFrameworkComponent where T : SingleGameFrameworkComponent<T> {
+        
+        private static T inst;
+
+        protected override void Awake() {
+            inst = GetComponent<T>();
+        }
+        
+        public static T Inst() {
+            if (inst) return inst;
+            var parentObj = GameObject.Find("SingleGameFrameworkComponent");
+            if (!parentObj) parentObj = new GameObject("SingleGameFrameworkComponent");
+            return inst = parentObj.AddComponent<T>();
+        }
+    }
 }

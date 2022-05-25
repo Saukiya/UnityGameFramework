@@ -19,7 +19,7 @@ namespace UnityGameFramework.Runtime
     /// </summary>
     [DisallowMultipleComponent]
     [AddComponentMenu("Game Framework/Data Table")]
-    public sealed class DataTableComponent : GameFrameworkComponent
+    public sealed class DataTableComponent : SingleGameFrameworkComponent<DataTableComponent>
     {
         private const int DefaultPriority = 0;
 

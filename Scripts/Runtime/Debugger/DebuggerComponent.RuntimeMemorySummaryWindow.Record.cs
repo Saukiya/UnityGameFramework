@@ -7,7 +7,7 @@
 
 namespace UnityGameFramework.Runtime
 {
-    public sealed partial class DebuggerComponent : GameFrameworkComponent
+    public sealed partial class DebuggerComponent : SingleGameFrameworkComponent<DebuggerComponent>
     {
         private sealed partial class RuntimeMemorySummaryWindow : ScrollableDebuggerWindowBase
         {
